@@ -68,7 +68,6 @@ public class IQTextView : UITextView {
                     unwrappedPlaceholderLabel.numberOfLines = 0
                     unwrappedPlaceholderLabel.font = self.font
                     unwrappedPlaceholderLabel.backgroundColor = UIColor.clearColor()
-                    unwrappedPlaceholderLabel.textColor = UIColor(white: 0.7, alpha: 1.0)
                     unwrappedPlaceholderLabel.alpha = 0
                     addSubview(unwrappedPlaceholderLabel)
                 }
@@ -76,6 +75,18 @@ public class IQTextView : UITextView {
             
             placeholderLabel?.text = newValue
             refreshPlaceholder()
+        }
+    }
+    
+    public var placeholderColor: UIColor? {
+        get {
+            return placeholderLabel?.textColor
+        }
+        
+        set {
+            if placeholderLabel !== nil {
+                placeholderLabel.textColor = placeholderColor
+            }
         }
     }
     
