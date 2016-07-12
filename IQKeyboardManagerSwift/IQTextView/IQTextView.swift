@@ -85,7 +85,7 @@ public class IQTextView : UITextView {
         
         set {
             if placeholderLabel !== nil {
-                placeholderLabel.textColor = placeholderColor
+                placeholderLabel!.textColor = placeholderColor
             }
         }
     }
