@@ -97,6 +97,19 @@ open class IQTextView : UITextView {
         }
     }
     
+    
+    open var placeholderColor: UIColor? {
+        get {
+            return placeholderLabel?.textColor
+        }
+        
+        set {
+            if placeholderLabel !== nil {
+                placeholderLabel.textColor = placeholderColor
+            }
+        }
+    }
+    
     override open var text: String! {
         
         didSet {
