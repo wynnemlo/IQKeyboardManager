@@ -46,7 +46,7 @@ public class IQTextView : UITextView {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    private var placeholderLabel: UILabel?
+    public var placeholderLabel: UILabel?
     
     /** @abstract To set textView's placeholder text. Default is ni.    */
     @IBInspectable public var placeholder : String? {
@@ -75,18 +75,6 @@ public class IQTextView : UITextView {
             
             placeholderLabel?.text = newValue
             refreshPlaceholder()
-        }
-    }
-    
-    public var placeholderColor: UIColor? {
-        get {
-            return placeholderLabel?.textColor
-        }
-        
-        set {
-            if placeholderLabel !== nil {
-                placeholderLabel!.textColor = placeholderColor
-            }
         }
     }
     
