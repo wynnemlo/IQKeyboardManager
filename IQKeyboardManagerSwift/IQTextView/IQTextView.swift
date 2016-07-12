@@ -46,7 +46,11 @@ open class IQTextView : UITextView {
         NotificationCenter.default.removeObserver(self)
     }
     
+<<<<<<< 4eab18bfb8596031172b493a251a4dd38c22ed42
     fileprivate var placeholderLabel: UILabel?
+=======
+    public var placeholderLabel: UILabel?
+>>>>>>> Publicized placeholder label
     
     /** @abstract To set textView's placeholder text. Default is ni.    */
     @IBInspectable open var placeholder : String? {
