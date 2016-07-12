@@ -31,7 +31,7 @@ open class IQTextView : UITextView {
         super.init(coder: aDecoder)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
     }
-
+    
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         NotificationCenter.default.addObserver(self, selector: #selector(self.refreshPlaceholder), name: NSNotification.Name.UITextViewTextDidChange, object: self)
@@ -46,19 +46,16 @@ open class IQTextView : UITextView {
         NotificationCenter.default.removeObserver(self)
     }
     
-<<<<<<< 4eab18bfb8596031172b493a251a4dd38c22ed42
-    fileprivate var placeholderLabel: UILabel?
-=======
-    public var placeholderLabel: UILabel?
->>>>>>> Publicized placeholder label
-    
+    private var placeholderLabel: UILabel?
+
     /** @abstract To set textView's placeholder text. Default is ni.    */
+    
     @IBInspectable open var placeholder : String? {
 
         get {
             return placeholderLabel?.text
         }
- 
+
         set {
             
             if placeholderLabel == nil {
@@ -79,6 +76,23 @@ open class IQTextView : UITextView {
             }
             
             placeholderLabel?.text = newValue
+            refreshPlaceholder()
+        }
+    }
+    
+    @IBInspectable open var placeholderColor : UIColor? {
+        
+        get {
+            return placeholderLabel?.textColor
+        }
+        
+        set {
+            
+            if placeholderLabel == nil {
+                return
+            }
+            
+            placeholderLabel?.textColor = newValue
             refreshPlaceholder()
         }
     }
@@ -119,7 +133,7 @@ open class IQTextView : UITextView {
         didSet {
             
             refreshPlaceholder()
-
+            
         }
     }
     
