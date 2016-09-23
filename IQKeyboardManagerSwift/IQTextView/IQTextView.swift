@@ -138,7 +138,6 @@ open class IQTextView : UITextView {
     }
     
     override open var font : UIFont? {
-       
         didSet {
             
             if let unwrappedFont = font {
